@@ -6,7 +6,7 @@ public abstract class VehicleFactory {
     
     public void testDrive() {
         Vehicle vehicle = createVehicle();
-        System.out.println(vehicle.drive());
+        System.out.println(vehicle.tax());
     }
 
 }

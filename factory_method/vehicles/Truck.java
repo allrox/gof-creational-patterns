@@ -1,10 +1,10 @@
 package factory_method.vehicles;
 import factory_method.abstracts.Vehicle;
 
-public class Car extends Vehicle {
-    
-    public Car() {
-        super("Car", 2);
+public class Truck extends Vehicle {
+
+    public Truck() {
+        super("Truck", 6);
     }
     
 }
