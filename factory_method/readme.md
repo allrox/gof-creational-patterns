@@ -3,7 +3,7 @@
 
 **The Factory Method pattern defines an interface for object creation**, allowing subclasses to decide which concrete class will be instantiated. This pattern promotes code flexibility and extensibility, reducing coupling between classes.
 
-## Logical construction
+## Logical structure
 
 ### First: Interface *VehicleInterface.java*
 The interface defines a contract ensuring that all vehicles share a common behavior.
@@ -30,3 +30,22 @@ Calls the startTransport() method, which:
 * Uses the Factory Method (createVehicle()) to generate a concrete vehicle.
 * Calls the drive() method without directly referencing Car or Motorcycle.
 * Demonstrates how the Factory Method pattern ensures loose coupling and extensibility.
+
+## Why use Factory Method?
+
+**Encapsulates object creation** → The client does not need to know which concrete class to instantiate.  
+**Reduces coupling** → The client depends only on the abstract factory (`VehicleFactory`), not on specific implementations.  
+**Enhances maintainability** → Adding a new vehicle type (e.g., `Truck`) only requires creating a new factory without modifying existing code.  
+**Promotes consistency** → Ensures that all created objects follow a predefined structure and interface.  
+**Supports scalability** → The pattern allows new products to be integrated into the system seamlessly.  
+
+## Factory Method: Precedence and Dependencies Summary
+
+| Order | File                           | Function                                                    | Dependencies                                      |
+|-------|--------------------------------|-------------------------------------------------------------|--------------------------------------------------|
+| 1️⃣   | `VehicleInterface.java`        | Defines the interface for vehicles                         | None                                             |
+| 2️⃣   | `VehicleFactory.java`          | Defines the Factory Method                                 | Depends on `VehicleInterface`                     |
+| 3️⃣   | `CarFactory.java`, `MotorcycleFactory.java` | Implement the Factory Method, creating concrete vehicles | Depend on `VehicleFactory` and concrete classes  |
+| 4️⃣   | `Car.java`, `Motorcycle.java`  | Implement the vehicle interface                           | Depend on `VehicleInterface`                     |
+| 5️⃣   | `Main.java`                    | Application entry point                                   | Depends on `VehicleFactory`                      |
+
